@@ -66,7 +66,7 @@ export class CustomerService {
     custAddress: {
       firstLine: '17/3, New Avenue',
       secondLine: 'Park Street',
-      landmark: '',
+      landmark: 'Water tank',
       city: 'Dallas',
       State: 'Texas',
       country: 'USA'
