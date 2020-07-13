@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-4 no-padding-left">
+        <app-cust-details [customers]="customer"></app-cust-details>
+    </div>
+    <mat-card class="col-md-8 wrapped-details">
+        <div class="col-md-12">
+            <h3>{{customerDetail.custName}}</h3>
+        </div>
+        <div class="row col-md-12 no-padding-right">
+            <div class="col-md-4 border-right">
+                <app-customer-address [customerAddress]="customerAddress">
+                </app-customer-address>
+            </div>
+            <div class="col-md-8 no-padding-right">
+                <app-customer-account [customerAccounts]="customerAccounts">
+                </app-customer-account>
+            </div>
+        </div>
+    </mat-card>
+</div>

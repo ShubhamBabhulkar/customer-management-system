@@ -1,0 +1,40 @@
+<mat-label>Customer Accounts</mat-label>
+<div>
+<div *ngFor="let customerAccount of customerAccounts">
+        <mat-accordion>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <span>Account Id</span> :
+                        <span> &nbsp;{{customerAccount.accountId}}</span>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                            <span>Amount</span>:
+                            <span>&nbsp; {{customerAccount.amount}} {{customerAccount.currency}}</span>
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+                  <div class="example-container mat-elevation-z5">
+                        <table mat-table [dataSource]="customerAccount.bills">
+                          <ng-container matColumnDef="billId">
+                            <th mat-header-cell *matHeaderCellDef> Bill Id </th>
+                            <td mat-cell *matCellDef="let element"> {{element.billId}} </td>
+                          </ng-container>
+                      
+                          <ng-container matColumnDef="amount">
+                            <th mat-header-cell *matHeaderCellDef> Amount </th>
+                            <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+                          </ng-container>
+                      
+                          <ng-container matColumnDef="billDt">
+                            <th mat-header-cell *matHeaderCellDef> Bill Date </th>
+                            <td mat-cell *matCellDef="let element"> {{element.billDt}} </td>
+                          </ng-container>
+                      
+                          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                      </div>
+                </mat-expansion-panel>
+              </mat-accordion>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+    <mat-label>Customer Address</mat-label>
+    <div>
+        {{customerAddress?.firstLine}} <span *ngIf="customerAddress.firstLine">,</span>
+        {{customerAddress?.secondLine}} <span *ngIf="customerAddress.secondLine">,</span>
+    </div>
+    <div>
+        {{customerAddress?.landmark}} <span *ngIf="customerAddress.landmark">,</span>
+        {{customerAddress?.city}}<span *ngIf="customerAddress.city">,</span>
+    </div>
+    <div>
+        {{customerAddress?.State}} <span *ngIf="customerAddress.State">,</span> 
+        {{customerAddress?.country}}
+    </div>
