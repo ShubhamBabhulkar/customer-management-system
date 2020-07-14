@@ -13,10 +13,12 @@ export class CustDetailsComponent implements OnInit {
   dataSource: any;
   selectedCust: any;
   counter: any = 0;
+  columnsToDisplay: string[];
   constructor() { }
 
   ngOnInit() {
-    this.displayedColumns = ['custName', 'dob', 'custAge', 'action'];
+    this.displayedColumns = ['custName', 'dob', 'custAge'];
+    this.columnsToDisplay = this.displayedColumns.slice();
     this.dataSource = this.customers;
     this.custDetail.emit(this.dataSource[0]);
     this.selectedCust = 0;
@@ -27,4 +29,12 @@ export class CustDetailsComponent implements OnInit {
     this.custDetail.emit(custDetails);
   }
 
+  toggleColuman = (colName) => {
+    const index = this.columnsToDisplay.indexOf(colName);
+    if (index > -1) {
+      this.columnsToDisplay.splice(index, 1);
+    } else {
+      this.columnsToDisplay.push(colName);
+    }
+  }
 }
