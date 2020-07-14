@@ -11,6 +11,7 @@ import { CustDetailsComponent } from './components/cust-details/cust-details.com
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CustomerAddressComponent } from './components/customer-address/customer-address.component';
 import { CustomerAccountComponent } from './components/customer-account/customer-account.component';
+import { ConvertCamelCasePipe } from './pipes/convert-camel-case.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CustomerAccountComponent } from './components/customer-account/customer
     CustDetailsComponent,
     DashboardComponent,
     CustomerAddressComponent,
-    CustomerAccountComponent
+    CustomerAccountComponent,
+    ConvertCamelCasePipe
     ],
   imports: [
     BrowserModule,
