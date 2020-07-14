@@ -1,6 +1,5 @@
 import { CustomerService } from './../../service/customer.service';
 import { Component, OnInit } from '@angular/core';
-import * as _ from 'lodash';    
 
 @Component({
   selector: 'app-dashboard',

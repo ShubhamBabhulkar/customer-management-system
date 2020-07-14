@@ -1,5 +1,5 @@
-import { DashboardComponent } from './../dashboard/dashboard.component';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-cust-details',
   templateUrl: './cust-details.component.html',
@@ -7,23 +7,24 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CustDetailsComponent implements OnInit {
   @Input('customers') customers;
+  @Output() custDetail = new EventEmitter<object>();
+
   displayedColumns: string[];
   dataSource: any;
   selectedCust: any;
-
-  constructor(
-    private dashboardComponent: DashboardComponent
-  ) { }
+  counter: any = 0;
+  constructor() { }
 
   ngOnInit() {
     this.displayedColumns = ['custName', 'dob', 'custAge', 'action'];
     this.dataSource = this.customers;
-    this.dashboardComponent.customerdetails(this.dataSource[0]);
+    this.custDetail.emit(this.dataSource[0]);
     this.selectedCust = 0;
   }
 
   custDetails = (custDetails) => {
     this.selectedCust = this.dataSource.indexOf(custDetails);
-    this.dashboardComponent.customerdetails(custDetails);
+    this.custDetail.emit(custDetails);
   }
+
 }

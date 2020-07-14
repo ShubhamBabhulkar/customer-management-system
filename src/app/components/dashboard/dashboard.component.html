@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-4 no-padding-left">
-        <app-cust-details [customers]="customer"></app-cust-details>
+        <app-cust-details [customers]="customer" (custDetail)='customerdetails($event)'></app-cust-details>
     </div>
     <mat-card class="col-md-8 wrapped-details">
         <div class="col-md-12">
