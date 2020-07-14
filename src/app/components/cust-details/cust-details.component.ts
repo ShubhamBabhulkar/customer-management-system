@@ -29,12 +29,12 @@ export class CustDetailsComponent implements OnInit {
     this.custDetail.emit(custDetails);
   }
 
-  toggleColuman = (colName) => {
+  toggleColuman = (colName, colIndex) => {
     const index = this.columnsToDisplay.indexOf(colName);
     if (index > -1) {
       this.columnsToDisplay.splice(index, 1);
     } else {
-      this.columnsToDisplay.push(colName);
+      this.columnsToDisplay.splice(colIndex, 0, colName);
     }
   }
 }

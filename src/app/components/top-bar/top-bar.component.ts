@@ -11,8 +11,4 @@ export class TopBarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-
-  setCartCount(count) {
-    this.cartCount = count;
-  }
 }
